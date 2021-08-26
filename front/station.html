@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MyTransports</title>
+  <script src="./js/test.js"></script>
+  
+</head>
+
+<body>
+  <h1 id='title'>votre station est <em id='test'></em> , direction <em id='test2'></em> . Tout ça grâce à la requête get!!</h1>
+
+  <h1 id='title'>votre station est <em id='test3'></em> , direction <em id='test4'></em> . Tout ça grâce à l'url!!</h1>
+  <script type="text/javascript">
+    var parameters = location.search.substring(1).split("&");
+    var para = parameters[0].split("=");
+    station = unescape(para[1]);
+    para = parameters[1].split("=");
+    destination = unescape(para[1]);
+    document.getElementById("test3").innerHTML = station;
+    document.getElementById("test4").innerHTML = destination;
+  </script>
+
+</body>
+</html>
+
+
+ 
