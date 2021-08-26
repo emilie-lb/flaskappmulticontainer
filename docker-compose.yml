@@ -2,7 +2,8 @@ version: "3"
 
 services:
     flask_back:  
-        image: flask_back
+        # image: flask_back
+        image: myregistryelb.azurecr.io/flask_back
         build: .
         container_name: flask_back
         restart: always
@@ -14,7 +15,8 @@ services:
           - 5000:5000
       
     flask_front:
-        image: flask_front
+        # image: flask_front
+        image: myregistryelb.azurecr.io/flask_front
         build: ./front
         container_name: flask_front
         restart: always
@@ -23,7 +25,8 @@ services:
 
       
     flask_nginx:
-        image: nginx:latest
+        # image: nginx:latest
+        image: myregistryelb.azurecr.io/nginx
         container_name: flak_nginx
         restart: always
         # volumes:
