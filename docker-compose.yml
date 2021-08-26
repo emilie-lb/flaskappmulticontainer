@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+    flask_back:  
+        image: flask_back
+        build: .
+        container_name: flask_back
+        restart: always
+        
+        # restart: always
+        # environment:
+        #      APP_NAME=MyFlaskApp
+        ports:
+          - 5000:5000
+      
+    flask_front:
+        image: flask_front
+        build: ./front
+        container_name: flask_front
+        restart: always
+        ports:
+          - 8080:80
+
+      
+    flask_nginx:
+        image: nginx:latest
+        container_name: flak_nginx
+        restart: always
+        volumes:
+            - ./default.conf:/etc/nginx/conf.d/default.conf
+        # # - ./cert:/etc/nginx/certs
+        links: 
+            - flask_front
+            - flask_back
+        ports:
+            - 80:80
+        # - 443:443
+        
+        # - "5000:5000"
+
+
