@@ -19,6 +19,7 @@ RUN pip install -r requirements.txt
 
 # EXPOSE 5000
 WORKDIR /app
-ENTRYPOINT [ "python" ]
+# ENTRYPOINT [ "python" ]
 
-CMD [ "run.py" ]
+# CMD [ "run.py" ]
+CMD [ "gunicorn", "--bind=0.0.0.0", "back:app" ]

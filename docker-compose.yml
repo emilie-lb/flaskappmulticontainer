@@ -4,7 +4,7 @@ services:
     flask_back:  
         # image: flask_back
         image: myregistryelb.azurecr.io/flask_back
-        build: .
+        # build: .
         container_name: flask_back
         restart: always
         
@@ -17,7 +17,7 @@ services:
     flask_front:
         # image: flask_front
         image: myregistryelb.azurecr.io/flask_front
-        build: ./front
+        # build: ./front
         container_name: flask_front
         restart: always
         ports:
